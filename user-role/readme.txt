@@ -1,20 +1,22 @@
 ﻿=== User Role by BestWebSoft - Add and Customize Roles and Capabilities in WordPress ===
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
-Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
+Tags: capability, change capabilities, capability editor, capability manager, role manager, user roles, user permissions, wordpress user role editor
 Requires at least: 5.6
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 1.7.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Powerful user role management plugin for WordPress website. Create, edit, copy, and delete user roles.
+Powerful user role management plugin for WordPress websites. Easily create, customize, and manage user roles and capabilities without writing code.
 
 == Description ==
 
-User Role plugin makes it easy to manage your WordPress website role capabilities. Add new and manage existing user roles. Quickly control what users can and cannot do on your website.
+User Role by BestWebSoft is a simple and powerful WordPress user role editor plugin that allows you to add, edit, copy, and remove user roles with custom capabilities. Take full control over WordPress user roles and permissions in just a few clicks.
 
-Change role name, copy permissions from another role, and other great features. Extend the default user management features today!
+Whether you want to change existing roles, create new ones from scratch, or assign multiple roles to a user – this plugin gives you the flexibility to manage all user access on your WordPress website easily and safely.
+
+Improve user role management and enhance your website security by customizing what users can and cannot do.
 
 [View Demo](https://bestwebsoft.com/demo-user-role-plugin/?ref=readme)
 
@@ -22,29 +24,29 @@ https://www.youtube.com/watch?v=rYY8DJUjSNo
 
 = Free Features =
 
-* View information about each role
-* Manage role capabilities
-* Copy capabilities from another role
-* Change role name
-* Recover any role to capabilities set before the plugin was installed
-* Compatible with latest WordPress version
-* Incredibly simple settings for fast setup without modifying code
-* Detailed step-by-step documentation and videos
-* Multilingual and RTL ready
+* View and manage WordPress user roles
+* Modify role capabilities and permissions
+* Copy capabilities from other roles
+* Rename any existing role
+* Recover original WordPress role settings
+* Fully compatible with the latest WordPress version
+* Easy-to-use interface with no coding required
+* Clear documentation and helpful video tutorials
+* Multilingual and RTL support
 
 > **Pro Features**
 >
-> All features from Free version included plus:
+> All features from the Free version, plus:
 >
-> * Add and manage unlimited custom user roles
-> * Enable/disable access to certain plugins and Dashboard menu items
-> * Reset standard WordPress roles capabilities to default
-> * Сonfigure all subsites on the network
-> * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
+> * Create unlimited custom WordPress user roles
+> * Restrict access to specific plugins and dashboard menu items
+> * Reset all standard WordPress roles to default settings
+> * Configure user roles and permissions across all subsites in a multisite network
+> * Priority support within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3)
 
-If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](https://support.bestwebsoft.com/hc/en-us/requests/new)
+Looking for a feature that’s not included? [Suggest a Feature](https://support.bestwebsoft.com/hc/en-us/requests/new)
 
 = Documentation & Videos =
 
@@ -55,11 +57,11 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Help & Support =
 
-Visit our Help Center if you have any questions, our friendly Support Team is happy to help - <https://support.bestwebsoft.com/>
+Have questions about the plugin or need help? Visit our Help Center – we’re happy to assist you: <https://support.bestwebsoft.com/>
 
 = Affiliate Program =
 
-Earn 20% commission by selling the premium WordPress plugins and themes by BestWebSoft — https://bestwebsoft.com/affiliate/
+Earn 20% commission by promoting and selling premium WordPress plugins and themes by BestWebSoft — https://bestwebsoft.com/affiliate/
 
 = Translation =
 
@@ -72,40 +74,40 @@ Earn 20% commission by selling the premium WordPress plugins and themes by BestW
 * Serbian (sr_RS) (thanks to [Andrijana Nikolic](mailto:andrijanan@webhostinggeeks.com), www.webhostinggeeks.com)
 * Ukrainian (uk)
 
-Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](https://make.wordpress.org/polyglots/handbook/) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](https://www.poedit.net/download.php).
+Some translations may not be complete. You’re welcome to contribute translations by submitting PO and MO files to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new). Download Poedit to get started: [https://www.poedit.net/download.php](https://www.poedit.net/download.php)
 
 = Recommended Plugins =
 
-* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c) - Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c) – Automatically check and update WordPress core, plugins, and themes to the latest versions.
 
 == Installation ==
 
-1. Deactivate the plugin if you have the previous version installed.
-2. Extract "user-role.zip" archive content to the "/wp-content/plugins/user-role" directory.
-3. Activate User Role plugin via 'Plugins' menu in WordPress admin menu.
+1. Deactivate the previous version of the plugin, if installed.
+2. Unzip the "user-role.zip" archive and upload it to the `/wp-content/plugins/user-role` directory.
+3. Activate the User Role plugin through the 'Plugins' menu in WordPress admin.
 
-[View a Step-by-step Instruction on User Role Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
+[Step-by-step Installation Guide](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
 
 https://www.youtube.com/watch?v=gz9BkouavtU
 
 == Frequently Asked Questions ==
 
-= What settings will be restored if I click on the Recover link? =
+= What settings are restored when I click "Recover"? =
 
-Roles will be restored to capabilities that were set at the time of the plugin activation. If the role was created after plugin activation, then it will be restored to capabilities that were set at the time of the role creation.
+The role’s capabilities will be reset to what they were when the plugin was first activated. If the role was created afterward, it will be restored to the initial capabilities set during its creation.
 
-= When I delete the User Role plugin will the settings of privileges be changed back? =
+= Will role settings change if I delete the plugin? =
 
-Yes. They will be recovered.
+Yes, roles will revert to their original capability settings.
 
-= I have some problems with the plugin's work. What Information should I provide to receive proper support? =
+= I’m having issues with the plugin. What details should I send for support? =
 
-Please make sure that the problem hasn't been discussed yet on our forum (<https://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
+Please check our [support center](https://support.bestwebsoft.com) first. If the issue hasn’t been addressed, include the following in your request:
 
-1. the link to the page where the problem occurs
-2. the name of the plugin and its version. If you are using a pro version - your order number.
-3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://bestwebsoft.com/documentation/admin-panel-issues/system-status/)
+1. The URL where the issue occurs
+2. Plugin name and version (include order number if using Pro)
+3. Your WordPress version
+4. Your system status report (See: [System Status Instructions](https://bestwebsoft.com/documentation/admin-panel-issues/system-status/))
 
 == Screenshots ==
 
