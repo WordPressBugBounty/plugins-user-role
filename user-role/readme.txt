@@ -3,7 +3,7 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user roles, user permissions, wordpress user role editor
 Requires at least: 5.6
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 1.7.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
