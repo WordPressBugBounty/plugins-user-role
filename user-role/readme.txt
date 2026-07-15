@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user roles, user permissions, wordpress user role editor
 Requires at least: 5.6
-Tested up to: 6.9
-Stable tag: 1.7.2
+Tested up to: 7.0
+Stable tag: 1.7.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -118,6 +118,10 @@ Please check our [support center](https://support.bestwebsoft.com) first. If the
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.7.3 - 15.07.2026
+* New: ability for export roles has been added.
+* Update : We updated all functionality for WordPress 7.0.
 
 = V1.7.2 - 10.01.2025 =
 * Update : We updated all functionality for WordPress 6.7.
@@ -274,6 +278,9 @@ Please check our [support center](https://support.bestwebsoft.com) first. If the
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.7.3 =
+* New features added.
 
 = V1.7.1 =
 * Bugs fixed.

@@ -26,8 +26,9 @@ if ( ! class_exists( 'Srrl_Settings_Tabs' ) ) {
 			global $srrl_options, $srrl_plugin_info;
 
 			$tabs = array(
-				'misc'    => array( 'label' => __( 'Misc', 'user-role' ) ),
-				'license' => array( 'label' => __( 'License Key', 'user-role' ) ),
+				'import-export' => array( 'label' => __( 'Import / Export', 'user-role' ) ),
+				'misc'          => array( 'label' => __( 'Misc', 'user-role' ) ),
+				'license'       => array( 'label' => __( 'License Key', 'user-role' ) ),
 			);
 
 			parent::__construct(
@@ -45,13 +46,53 @@ if ( ! class_exists( 'Srrl_Settings_Tabs' ) ) {
 					'doc_link'           => 'https://bestwebsoft.com/documentation/user-role/user-role-user-guide/',
 				)
 			);
-
 		}
 
 		/**
 		 * Save options
 		 */
 		public function save_options() {}
+
+		public function tab_import_export() { ?>
+			<h3 class="bws_tab_label"><?php esc_html_e( 'Import / Export', 'user-role' ); ?></h3>
+			<?php $this->help_phrase(); ?>
+			<hr>
+			<table class="form-table">
+				<tr valign="top">
+					<th scope="row"><?php esc_html_e( 'Export User Role and settings', 'user-role' ); ?></th>
+					<td>
+						<fieldset>
+							<label><input type="radio" name="srrl_format_export" value="csv" checked="checked" /><?php esc_html_e( 'CSV file format', 'user-role' ); ?></label><br />
+						</fieldset>
+						<input type="submit" name="srrl_export_submit" class="button" value="<?php esc_html_e( 'Export', 'user-role' ) ?>" />
+						<?php wp_nonce_field( 'srrl_export_import_action', 'srrl_export_import_nonce' ); ?>
+					</td>
+				</tr>
+			</table>
+			<div class="bws_pro_version_bloc">
+				<div class="bws_pro_version_table_bloc">
+					<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php esc_html_e( 'Close', 'user-role' ); ?>"></button>
+					<div class="bws_table_bg"></div>
+					<table class="form-table bws_pro_version">
+						<tr valign="top">
+							<th scope="row"><?php esc_html_e( 'Import User Role and settings', 'user-role' ); ?></th>
+							<td>
+								<fieldset>
+									<label><input disabled="disabled" type="radio" checked="checked" /><?php esc_html_e( 'Add new User Roles', 'user-role' ); ?></label><br />
+									<label><input disabled="disabled" type="radio" /><?php esc_html_e( 'Replace setting for exists User Roles', 'user-role' ); ?> </label><br />
+									<label><input disabled="disabled" type="radio" /><?php esc_html_e( 'Add new User Roles and replace setting for exists User Roles', 'user-role' ); ?></label><br />
+									<label><input disabled="disabled" type="checkbox" checked="checked" /><?php esc_html_e( 'Do not touch standard User Roles', 'user-role' ); ?></label><br />
+								</fieldset>
+								<label><input disabled="disabled" type="file" /></label><br />
+								<input  disabled="disabled" type="submit" class="button" value="<?php esc_html_e( 'Import', 'user-role' ); ?>" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<?php $this->bws_pro_block_links(); ?>
+			</div>
+		<?php }
+
 
 		/**
 		 * Display tab

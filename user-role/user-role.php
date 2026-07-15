@@ -6,7 +6,7 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.7.2
+Version: 1.7.3
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -120,6 +120,14 @@ if ( ! function_exists( 'srrl_admin_init' ) ) {
 
 			}
 		}
+
+		if ( isset( $_POST['srrl_export_submit'] ) &&
+			isset( $_POST['srrl_export_import_nonce'] ) &&
+			wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['srrl_export_import_nonce'] ) ), 'srrl_export_import_action' ) &&
+			current_user_can( 'edit_users' )
+		) {
+			srrl_export_file( sanitize_text_field( wp_unslash( $_POST['srrl_export_import_nonce'] ) ) );
+		}
 	}
 }
 
@@ -145,6 +153,57 @@ if ( ! function_exists( 'srrl_admin_head' ) ) {
 			wp_localize_script( 'srrl_script', 'srrl_translation', $srrl_translation_array );
 
 			bws_enqueue_settings_scripts();
+		}
+	}
+}
+
+if ( ! function_exists( 'srrl_export_file' ) ) {
+	/**
+	 * Export info from db
+	 *
+	 * @param string $format Format name.
+	 * @param string $nonce  Nonce from POST.
+	 */
+	function srrl_export_file( $nonce ) {
+		global $wpdb;
+		if ( wp_verify_nonce( $nonce, 'srrl_export_import_action' ) && current_user_can( 'edit_users' ) ) {
+			global $wp_filesystem;
+			WP_Filesystem();
+			$export    = '';
+			
+			$upload_dir = wp_upload_dir();
+			$file_name = wp_tempnam( 'tmp', $upload_dir['path'] . '/' );
+			if ( ! $file_name ) {
+				return false;
+			}
+			$blog_options = get_option( "{$wpdb->prefix}user_roles" );
+			$first_line_data = array( 'slug', 'name' );
+			$result = array();
+			foreach ( $blog_options as $key => $value ) {
+				$result = array_merge( $result, array_keys( $value['capabilities'] ) );
+			}
+			$result = array_unique( $result );
+			$export_str = '"' . implode( '";"', array_merge( $first_line_data, $result ) ) . '";' . PHP_EOL;
+			foreach ( $blog_options as $key => $value ) {
+				$export_str .= '"' . implode( '";"', array( $key, $value['name'] ) ) . '";';
+				foreach( $result as $capabilities_key ) {
+					if ( array_key_exists( $capabilities_key, $value['capabilities'] ) ) {
+						$export_str .= ( 1 == $value['capabilities'][ $capabilities_key ] ? '1;' : '0;' );
+					} else {
+						$export_str .= ';';
+					}
+				}
+				$export_str .= PHP_EOL;
+			}
+			$result_csv = $wp_filesystem->put_contents( $file_name, $export_str );
+			if ( ! $result_csv ) {
+				return false;
+			}
+			header( 'Content-Type: application/octet-stream' );
+			header( 'Content-Disposition: attachment; filename="user_role_' . parse_url( home_url() )['host'] . '_' . date( 'd_m_Y' ) . '_export.csv"' );
+			echo wp_kses_post( $wp_filesystem->get_contents( $file_name ) );
+			unlink( $file_name );
+			exit();
 		}
 	}
 }
